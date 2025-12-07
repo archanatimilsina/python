@@ -159,15 +159,72 @@
 # else:
 #   print("a is eqaul to b")
 
-a,b=5,10
-#. >
-print(a>b) #output: False
-#. <
-print(a<b) #output: True
+# a,b=5,10
+# #. >
+# print(a>b) #output: False
+# #. <
+# print(a<b) #output: True
 
-#. <=
-print(a<=b)#output: True 
+# #. <=
+# print(a<=b)#output: True 
 
-#. >=
-print(a>=b)#output: False
+# #. >=
+# print(a>=b)#output: False
 
+
+
+#logical operator
+
+# a=20
+# b=34
+# if (a<b and b!=20):
+#     {
+#         print("ahhhh!!!")
+#     }
+
+# if(a>b or b!=20):
+#     {
+#         print("AHAHHH!!!")
+#     }
+# if(not a>b):
+#     {
+#         print("it may be wrong!!!")
+#     }
+
+
+# # is => identity check
+# is doesn’t care whether two things look the same. It checks whether they are literally the same object in memory.
+# m=a=4
+# if(m is a):
+#    print("is work!!!")
+
+# # is not => identity mismatch
+# m=3
+# a=5
+# if(m is not a):
+#    print("is not work!!!")
+
+
+#in 
+# in asks: Is this element inside that container?
+# This applies to:
+# lists
+# tuples
+# strings
+# sets
+# dictionaries (keys only)
+# a=["Apple","banana"]
+# b=["mango","strawberry"]
+# if("mango" in b):
+    
+#         print("True")
+    
+
+# #not in
+
+# a=["Apple","banana"]
+# b=["mango","strawberry"]
+# if("mango0" not in b):
+#     {
+#         print("False")
+#     }
