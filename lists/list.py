@@ -15,7 +15,7 @@
 # print(fruitList)
 
 #extend(iterable)
-fruitList= ["Apple", "banana","mango","watermeleon"]
+# fruitList= ["Apple", "banana","mango","watermeleon"]
 #extending list
 # listy= ["shine","brighter"]
 # fruitList.extend(listy)
@@ -126,3 +126,45 @@ fruitList= ["Apple", "banana","mango","watermeleon"]
 # del fruitList[3]
 # print(fruitList) #output: ['Apple', 'banana', 'mango']
 
+#looping through the list
+# for fruits in fruitList:
+#     print(fruits)
+    #output: 
+# Apple
+# banana
+# mango
+# watermeleon
+
+# #loop through index number
+# for i in range(len(fruitList)):
+#     print(fruitList[i])
+        #output: 
+# Apple
+# banana
+# mango
+# watermeleon
+
+
+#while loop
+# i=0
+# while i<len(fruitList):
+#     print(fruitList[i])
+#     i+=1
+ #output: 
+# Apple
+# banana
+# mango
+# watermeleon
+
+# [print(x) for x in fruitList]
+ #output: 
+# Apple
+# banana
+# mango
+# watermeleon
+
+#concatenate two lists
+# list1=["alr","blr","clr"]
+# list2=["dlr","elr","flr"]
+# print(list1 + list2)
+#output: ['alr', 'blr', 'clr', 'dlr', 'elr', 'flr']
