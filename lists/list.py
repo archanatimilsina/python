@@ -108,3 +108,21 @@ fruitList= ["Apple", "banana","mango","watermeleon"]
 # #output: ['Apple', 'banana', 'mango', 'watermeleon']
 
 
+#len()
+# print(len(fruitList))
+# output: 4
+
+#slicing 
+# print(fruitList) #output: ['Apple', 'banana', 'mango', 'watermeleon']
+# print(fruitList[1:2]) #output: ['banana']
+
+# print("Apple" in fruitList) #output: True
+
+# #inserting into the list
+# fruitList[4:6]=["Hello","world"]
+# print(fruitList) #output: ['Apple', 'banana', 'mango', 'watermeleon', 'Hello', 'world']
+
+#remove from the list using del keyword
+# del fruitList[3]
+# print(fruitList) #output: ['Apple', 'banana', 'mango']
+
