@@ -65,7 +65,7 @@
 # key=["name","surname","age","phoneNumber"]
 # print(dict.fromkeys(key)) #output: {'name': None, 'surname': None, 'age': None, 'phoneNumber': None}
 # print(dict.fromkeys(key,"unknown")) #output: {'name': 'unknown', 'surname': 'unknown', 'age': 'unknown', 'phoneNumber': 'unknown'}
-
+# we can also do like this x=["key1","key2","key3"] y=["value1","value2","value3"] newDict= dict.fromkeys(x,y)
 
 #._contains_(key) Returns True if the key exist otherwise returns False
 # print(student.__contains__("name"))  #output : True
@@ -98,3 +98,67 @@
 # it=student.__iter__()
 # print(next(it)) #output: name
 # print(next(it)) #output: surname
+
+#loop through all keys
+# student={
+#     "name": "Archana",
+#     "surname":"Timilsina",
+#     "age":24,
+#     "address":"Bhaktapur"
+# }
+# for key in student:
+#     print(key)
+#output: 
+# name
+# surname
+# age
+# address
+
+#loop through all values
+# for values in student.values():
+#     print(values)
+#output:
+# Archana
+# Timilsina
+# 24
+# Bhaktapur
+
+#or
+# for key in student:
+#     print(student[key])
+#output:
+# Archana
+# Timilsina
+# 24
+# Bhaktapur
+
+# for key,value in student.items():
+#  print(key ,value)
+ #output: 
+# name Archana
+# surname Timilsina
+# age 24
+# address Bhaktapur
+
+#nested dictionary
+# student={
+#     "name": "Archana",
+#     "surname":"Timilsina",
+#     "age":24,
+#     "address":
+#     {
+#         "district":"Bhaktapur",
+#         "ward":8,
+#         "province":3
+#     }
+# }
+# # print(student["address"]["province"]) #output : 3
+
+# for key, value in student.items():
+#     print(key)
+#     print(value)
+#     if isinstance(value, dict):
+#         for inner_key, inner_value in value.items():
+#             print(inner_key)  
+#             print(inner_value)  
+
