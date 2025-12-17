@@ -309,7 +309,26 @@ df= pd.read_csv('files/final.csv')
 # print(df.tail()) #shows last 5 rows
 # print(df.tail(7)) #shows last n rows
 # .info() #Structure, dtypes, null counts.
-df.info()
+# df.info()
+#output:
+# <class 'pandas.core.frame.DataFrame'>
+# Index: 966 entries, 0 to 966
+# Data columns (total 9 columns):
+#  #   Column      Non-Null Count  Dtype 
+# ---  ------      --------------  ----- 
+#  0   Unnamed: 0  966 non-null    int64 
+#  1   label       966 non-null    object
+#  2   url         966 non-null    object
+#  3   brand       966 non-null    object
+#  4   name        966 non-null    object
+#  5   price       966 non-null    object
+#  6   skin type   966 non-null    object
+#  7   concern     966 non-null    object
+#  8   img         966 non-null    object
+# dtypes: int64(1), object(8)
+# memory usage: 75.5+ KB
+#we can use column like df['price']
+#object in pandas usually means text (string). 
 # .describe() #Summary statistics.
 # print(df.describe()) #Works on DataFrames, summarizing each numeric column.
 #output:
@@ -323,131 +342,156 @@ df.info()
 # 75%    724.750000
 # max    966.000000
 
-# .shape #Rows and columns count.
-df.shape()
-# .columns #Column names.
-df.columns()
-# .index #Row index.
-df.index()
-# .dtypes #Data types of columns.
-df.dtypes()
+# # .shape #Rows and columns count.
+# print(df.shape)
+#output:
+# (966, 9)
+# That means:
+# 966 rows
+# 9 columns
+# # .columns #Column names.
+# print(df.columns)
+#output:
+# Index(['Unnamed: 0', 'label', 'url', 'brand', 'name', 'price', 'skin type',
+#        'concern', 'img'],
+#       dtype='object')
+# # .index #Row index.
+# print(df.index)
+#output:
+# Index([  0,   1,   2,   3,   4,   5,   6,   7,   8,   9,
+#        ...
+#        957, 958, 959, 960, 961, 962, 963, 964, 965, 966],
+#       dtype='int64', length=966)
+# # .dtypes #Data types of columns.
+# print(df.dtypes)
+#ouput:
+# Unnamed: 0     int64
+# label         object
+# url           object
+# brand         object
+# name          object
+# price         object
+# skin type     object
+# concern       object
+# img           object
+# dtype: object
 
-# C. Selection & Indexing
-# .loc[] #Label-based selection.
-# .loc[] is used to access rows and columns by their labels (names), not by their numerical position.
-# You can pass row labels, column names, slices of labels, or boolean conditions.
-#syntax: df.loc[row_label, column_label]
+# # C. Selection & Indexing
+# # .loc[] #Label-based selection.
+# # .loc[] is used to access rows and columns by their labels (names), not by their numerical position.
+# # You can pass row labels, column names, slices of labels, or boolean conditions.
+# #syntax: df.loc[row_label, column_label]
 
-# .iloc[]  #Position-based selection.
-# .iloc[] works like a normal Python index: by row and column positions, integers only.
-# Useful when you don’t know labels or they are not integers.
-# Syntax:
-# df.iloc[row_index, column_index]
-# eg: 
-# .at[]   #Fast scalar access (label).
-
-
-# .iat[]  #Fast scalar access (position).
-
-
-# D. Cleaning & Missing Data
-# .isna() / .notna() : Detect missing values.
-df.isna()
-df.notna()
-
-# .dropna() :Remove rows/columns with NaN.
-df.dropna()
-
-# .fillna(value) : Fill missing values.
-df.fillna("Shine")
-
-#.replace() : Replace values.
-df.replace(0, None)
-
-
-
-# 🔁 E. Sorting & Ordering
-# .sort_values() : Sort by column.
-df.sort_values('A')
-
-# .sort_index() : Sort by index.
-df.sort_index()
-
-# F. Filtering & Boolean Logic
-df[df['A'] > 10]
-
-# .query() : SQL-like filtering.
-df.query('A > 10')
+# # .iloc[]  #Position-based selection.
+# # .iloc[] works like a normal Python index: by row and column positions, integers only.
+# # Useful when you don’t know labels or they are not integers.
+# # Syntax:
+# # df.iloc[row_index, column_index]
+# # eg: 
+# # .at[]   #Fast scalar access (label).
 
 
-# 🔄 G. Applying Functions
-# .map() (Series-level)
-df['A'].map(lambda x: x * 2)
+# # .iat[]  #Fast scalar access (position).
+
+
+# # D. Cleaning & Missing Data
+# # .isna() / .notna() : Detect missing values.
+# df.isna()
+# df.notna()
+
+# # .dropna() :Remove rows/columns with NaN.
+# df.dropna()
+
+# # .fillna(value) : Fill missing values.
+# df.fillna("Shine")
+
+# #.replace() : Replace values.
+# df.replace(0, None)
+
+
+
+# # 🔁 E. Sorting & Ordering
+# # .sort_values() : Sort by column.
+# df.sort_values('A')
+
+# # .sort_index() : Sort by index.
+# df.sort_index()
+
+# # F. Filtering & Boolean Logic
+# df[df['A'] > 10]
+
+# # .query() : SQL-like filtering.
+# df.query('A > 10')
+
+
+# # 🔄 G. Applying Functions
+# # .map() (Series-level)
+# df['A'].map(lambda x: x * 2)
  
-# .apply() : Apply function row/column-wise.
-df.apply(sum)
+# # .apply() : Apply function row/column-wise.
+# df.apply(sum)
 
-# .applymap()
-# Apply to every cell.
-df.applymap(str)
-
-
-# H. Aggregation & Statistics
-# .sum(), .mean(), .min(), .max()
-df.sum()
-df.mean()
-df.min()
-df.max()
-# .count() #Count non-null.
-df.count()
-# df.value_counts() : Frequency counts (Series).
-df['A'].value_counts()
+# # .applymap()
+# # Apply to every cell.
+# df.applymap(str)
 
 
-# 🧱 I. Grouping
-# .groupby() Split → Apply → Combine.
-df.groupby('category')['price'].mean()
+# # H. Aggregation & Statistics
+# # .sum(), .mean(), .min(), .max()
+# df.sum()
+# df.mean()
+# df.min()
+# df.max()
+# # .count() #Count non-null.
+# df.count()
+# # df.value_counts() : Frequency counts (Series).
+# df['A'].value_counts()
 
 
-# 🔗 J. Combining DataFrames
-# .merge(): SQL-style join.
-# pd.merge(df1, df2, on='id')
-
-# .join(): Join on index.
-# df1.join(df2)
-
-# .concat():  Stack DataFrames.
-# pd.concat([df1, df2])
-
-# K. Index Management
-# .set_index() :Set column as index.
-df.set_index('id')
-
-# .reset_index() : Reset index.
-df.reset_index()
-
-# .rename() : Rename columns/index.
-df.rename(columns={'A':'age'})
+# # 🧱 I. Grouping
+# # .groupby() Split → Apply → Combine.
+# df.groupby('category')['price'].mean()
 
 
-# L. Duplicates
-# .duplicated() :Detect duplicates.
-df.duplicated()
+# # 🔗 J. Combining DataFrames
+# # .merge(): SQL-style join.
+# # pd.merge(df1, df2, on='id')
 
-# .drop_duplicates() : Remove duplicates.
-df.drop_duplicates()
+# # .join(): Join on index.
+# # df1.join(df2)
+
+# # .concat():  Stack DataFrames.
+# # pd.concat([df1, df2])
+
+# # K. Index Management
+# # .set_index() :Set column as index.
+# df.set_index('id')
+
+# # .reset_index() : Reset index.
+# df.reset_index()
+
+# # .rename() : Rename columns/index.
+# df.rename(columns={'A':'age'})
 
 
-# M. Type Handling
-# .astype() : Change data type.
-# df['A'] = df['A'].astype(float)
+# # L. Duplicates
+# # .duplicated() :Detect duplicates.
+# df.duplicated()
+
+# # .drop_duplicates() : Remove duplicates.
+# df.drop_duplicates()
 
 
-# N. Input / Output
-# .to_csv() : Save to CSV.
-# df.to_csv('data.csv')
+# # M. Type Handling
+# # .astype() : Change data type.
+# # df['A'] = df['A'].astype(float)
 
-# pd.read_csv(): Load CSV
-# pd.read_csv('data.csv')
+
+# # N. Input / Output
+# # .to_csv() : Save to CSV.
+# # df.to_csv('data.csv')
+
+# # pd.read_csv(): Load CSV
+# # pd.read_csv('data.csv')
 
 
