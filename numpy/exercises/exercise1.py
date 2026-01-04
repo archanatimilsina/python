@@ -267,8 +267,6 @@
 
 
 
-
-
 # 3. Compute the standard deviation
 # Use np.std():
 # std_value = np.std(arr)
@@ -295,19 +293,190 @@
 
 ### **12. Dot product**
 # - Compute the **dot product** of `a` and `b`.
-
-import numpy as np
-a= np.array([
-    [1,2,3],
-    [4,5,6]
-]) #2*3 matrix
-b= np.array([
-    [1,2,3],
-    [7,8,9],
-    [1,2,3]
-]) # 3*3 matrix
-array_multiple = a @ b
-print(array_multiple) 
+# import numpy as np
+# a= np.array([
+#     [1,2,3],
+#     [4,5,6]
+# ]) #2*3 matrix
+# b= np.array([
+#     [1,2,3],
+#     [7,8,9],
+#     [1,2,3]
+# ]) # 3*3 matrix
+# array_multiple = a @ b
+# print(array_multiple) 
 #op:
 # [[18 24 30]
 #  [45 60 75]] #2*3 matrix
+
+#Boolean Indexing
+# Boolean indexing means:
+# You create a condition that returns True or False for each element in the array.
+# You use this Boolean array to select only the elements where the condition is True.
+# Example conceptually
+# Array:
+# arr = [1, 2, 3, 4, 5]
+# Condition:
+# arr > 3
+# What NumPy does:
+# [1>3, 2>3, 3>3, 4>3, 5>3] → [False, False, False, True, True]
+# Then we use this Boolean array to pick only the True elements:
+# [4, 5]
+# ✅ That’s Boolean indexing in action.
+
+### **15. Boolean indexing**
+# - Create array `[1, 2, 3, 4, 5]`.
+# - Print all elements **greater than 3**.
+# import numpy as np
+# arr =np.array([1, 2, 3, 4, 5])
+# # Step 1: Create Boolean mask
+# mask = arr > 3
+# print("Boolean mask:", mask)
+# # Step 2: Use mask to index array
+# filtered_arr = arr[mask]
+# print("Elements greater than 3:", filtered_arr)
+#shortcut 
+# print(arr[arr > 3])
+
+
+### **16. Fancy indexing**
+# - Create array `[10, 20, 30, 40, 50]`.
+# - Print elements at indices `[0, 2, 4]`.
+# Fancy indexing in NumPy means you select elements of an array using a list or array of indices instead of slicing sequentially.
+# You can pick specific elements in any order.
+# Works with 1D or multi-dimensional arrays.
+# Think of it like pointing directly to the elements you want.
+# import numpy as np
+# ary=np.array([10, 20, 30, 40, 50])
+# indices = [0, 2, 4]
+# selected_elements = ary[indices]
+# print("Selected elements:", selected_elements)
+
+# Fancy indexing with 2D arrays
+# arr2d = np.array([[1,2,3],
+#                   [4,5,6],
+#                   [7,8,9]])
+
+# # Select rows 0 and 2
+# print(arr2d[[0,2]])
+
+
+# Flattening means:
+# Convert a multi-dimensional array into a 1D array without changing the order of the elements.
+# You take all the rows and columns (and possibly layers) and lay them out in a single line.
+# ### **17. Flatten**
+# - Flatten a 2x3 array:
+# import numpy as np
+# arr = np.array([
+#     [1,2,3],
+#     [4,5,6]
+# ])
+# arr_flatten = arr.flatten()
+# print(f"Flatten array :{arr_flatten}")
+
+
+### **18. Transpose**
+# - Transpose the array:
+# Transposing an array means flipping it over its diagonal.
+# Rows become columns, and columns become rows.
+# For a 2D array:
+# Original:
+# [[1, 2, 3],
+#  [4, 5, 6]]
+# Transpose:
+# [[1, 4],
+#  [2, 5],
+#  [3, 6]]
+# Shape changes from (2,3) → (3,2)
+# import numpy as np
+# arr = np.array(
+#     [[1, 2, 3],
+#      [4, 5, 6]]
+# )
+# transpose_array = arr.T
+# print(transpose_array)
+
+
+# 1. Vertical stacking (vstack)
+# Vertical stacking means stack arrays row-wise → add rows on top of each other.
+# Arrays must have the same number of columns.
+# import numpy as np
+# a = np.array([[1, 2, 3]])
+# b = np.array([[4, 5, 6]])
+# # Stack vertically
+# v_stack = np.vstack((a, b))
+# print("Vertical Stack:\n", v_stack)
+
+
+# 2. Horizontal stacking (hstack)
+# Horizontal stacking means stack arrays column-wise → add columns next to each other.
+# Arrays must have the same number of rows.
+
+# a = np.array([[1],
+#               [2]])
+
+# b = np.array([[3],
+#               [4]])
+
+# # Stack horizontally
+# h_stack = np.hstack((a, b))
+# print("Horizontal Stack:\n", h_stack)
+
+# import numpy as np
+# a= np.array([
+#     [1,2,3],
+#     [4,5,6]
+# ])
+
+# b=np.array([
+#     [1,2,3]
+#     ])
+# c=np.array([
+#     [3,4,5],
+#     [6,7,8]
+# ])
+
+# v_stack = np.vstack((a,b))
+# print(v_stack)
+# #output:
+# # [[1 2 3]
+# #  [4 5 6]
+# #  [1 2 3]]
+
+# h_stack = np.hstack((a,c))
+# print(h_stack)
+# #output:
+# [[1 2 3 3 4 5]
+#  [4 5 6 6 7 8]]
+
+
+
+### **20. Create a sequence**
+# - Create an array of numbers from 0 to 20, with step size 2.
+# - Create an array of 5 numbers **linearly spaced between 0 and 1**.
+# import numpy as np
+# arr_step = np.arange(0,21,2)
+# print(arr_step)
+# arr_linspace = np.linspace(0 , 1 , 5)
+# print(arr_linspace)
+
+
+
+# 1. Create an array with a step (using np.arange)
+# np.arange(start, stop, step) generates numbers from start up to (but not including) stop with a fixed step size.
+# Example: 0 to 20 with step 2
+# import numpy as np
+# arr_step = np.arange(0, 21, 2)  # 21 is exclusive upper bound
+# print("Array with step 2:", arr_step)
+# Output:
+# Array with step 2: [ 0  2  4  6  8 10 12 14 16 18 20]
+# ✅ Notice it includes 0, ends at 20, and each number increments by 2.
+# 2. Create linearly spaced numbers (using np.linspace)
+# np.linspace(start, stop, num) generates num equally spaced numbers between start and stop, including both endpoints.
+# Example: 5 numbers between 0 and 1
+# arr_linspace = np.linspace(0, 1, 5)
+# print("Linearly spaced array:", arr_linspace)
+# Output:
+# Linearly spaced array: [0.   0.25 0.5  0.75 1.  ]
+# 5 numbers including 0 and 1
+# Each step is (1-0)/(5-1) = 0.25
