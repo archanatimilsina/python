@@ -1,0 +1,20 @@
+#LEVEL 3
+# 1. Sliding Window Median (optimized)
+# 2. Find Median from Data Stream (optimized)
+# 3. Merge k Sorted Lists (optimized)
+# 4. Kth Smallest Element in a Sorted Matrix (optimized)
+# 5. Smallest Range Covering Elements from K Lists (optimized)
+# 6. Course Schedule III (advanced)
+# 7. Task Scheduler (advanced)
+# 8. Kth Smallest Pair Distance (advanced)
+# 9. Minimum Number of Refueling Stops (advanced)
+# 10. Maximum Number of Events That Can Be Attended
+# 11. Minimum Cost to Connect Sticks (advanced)
+# 12. Kth Smallest Prime Fraction (advanced)
+# 13. Maximum Average Subarray II (heap + binary search)
+# 14. Sliding Window Maximum (advanced)
+# 15. Reorganize String (advanced)
+# 16. Find K-th Largest Value in a Stream (optimized)
+# 17. Merge Stones (advanced)
+# 18. Kth Largest Element in a Stream (advanced)
+#LEVEL 3

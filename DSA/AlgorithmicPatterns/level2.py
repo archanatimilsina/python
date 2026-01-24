@@ -1,0 +1,20 @@
+#LEVEL 2
+# 1. 3Sum (Two Pointer + Sorting)
+# 2. 3Sum Closest
+# 3. Container With Most Water (Two Pointer)
+# 4. Longest Substring Without Repeating Characters (Sliding Window)
+# 5. Minimum Window Substring (Sliding Window + Hashing)
+# 6. Sliding Window Maximum (Deque)
+# 7. Subarray Sum Equals K (Prefix Sum + Hashing)
+# 8. Longest Repeating Character Replacement (Sliding Window)
+# 9. Word Search (DFS + Backtracking)
+# 10. Combination Sum (Backtracking)
+# 11. Number of Islands (DFS/BFS)
+# 12. Course Schedule (Graph + Topological Sort)
+# 13. Alien Dictionary (Graph + Topological Sort)
+# 14. Top K Frequent Elements (Heap)
+# 15. Kth Smallest Element in a Sorted Matrix (Heap + Binary Search)
+# 16. Merge Intervals (Greedy)
+# 17. Decode Ways (DP)
+# 18. Word Ladder (BFS + Graph)
+#LEVEL 2
